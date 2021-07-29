@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,16 @@
 		2349FD6D261E4F6A00A1FEAA /* CodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD6C261E4F6A00A1FEAA /* CodingChallengeTests.swift */; };
 		2349FD78261E4F6A00A1FEAA /* CodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD77261E4F6A00A1FEAA /* CodingChallengeUITests.swift */; };
 		2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD88261E4F9900A1FEAA /* ShiftsView.swift */; };
+		7134D1E026B1705900C0A089 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1DE26B1705900C0A089 /* System.swift */; };
+		7134D1E126B1705900C0A089 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1DF26B1705900C0A089 /* Feedback.swift */; };
+		7134D1E426B1708A00C0A089 /* SwiftUI.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E326B1708A00C0A089 /* SwiftUI.View.swift */; };
+		7134D1E726B170DC00C0A089 /* ShiftsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */; };
+		7134D1EA26B1715600C0A089 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E926B1715600C0A089 /* Agent.swift */; };
+		7134D1EC26B177DC00C0A089 /* ShiftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1EB26B177DC00C0A089 /* ShiftsViewModel.swift */; };
+		7134D1EE26B1927500C0A089 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1ED26B1927500C0A089 /* Spinner.swift */; };
+		7134D1F226B1E34D00C0A089 /* UIKit.UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1F126B1E34D00C0A089 /* UIKit.UIColor.swift */; };
+		7134D1F426B1EA3500C0A089 /* ShiftDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1F326B1EA3500C0A089 /* ShiftDetailsView.swift */; };
+		7134D1F726B35FD300C0A089 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7134D1F626B35FD300C0A089 /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,15 @@
 		2349FD77261E4F6A00A1FEAA /* CodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengeUITests.swift; sourceTree = "<group>"; };
 		2349FD79261E4F6A00A1FEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2349FD88261E4F9900A1FEAA /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
+		7134D1DE26B1705900C0A089 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		7134D1DF26B1705900C0A089 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		7134D1E326B1708A00C0A089 /* SwiftUI.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUI.View.swift; sourceTree = "<group>"; };
+		7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsAPI.swift; sourceTree = "<group>"; };
+		7134D1E926B1715600C0A089 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		7134D1EB26B177DC00C0A089 /* ShiftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsViewModel.swift; sourceTree = "<group>"; };
+		7134D1ED26B1927500C0A089 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		7134D1F126B1E34D00C0A089 /* UIKit.UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.UIColor.swift; sourceTree = "<group>"; };
+		7134D1F326B1EA3500C0A089 /* ShiftDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7134D1F726B35FD300C0A089 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +115,12 @@
 		2349FD59261E4F6900A1FEAA /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				7134D1EF26B1DB5B00C0A089 /* Interface */,
+				7134D1E826B170F900C0A089 /* Networking */,
+				7134D1E226B1707F00C0A089 /* Extensions */,
+				7134D1DD26B1705900C0A089 /* Feedback */,
+				7134D1DB26B1703A00C0A089 /* Data */,
 				2349FD5A261E4F6900A1FEAA /* CodingChallengeApp.swift */,
-				2349FD88261E4F9900A1FEAA /* ShiftsView.swift */,
 				2349FD5E261E4F6A00A1FEAA /* Assets.xcassets */,
 				2349FD63261E4F6A00A1FEAA /* Info.plist */,
 				2349FD60261E4F6A00A1FEAA /* Preview Content */,
@@ -128,6 +152,91 @@
 				2349FD79261E4F6A00A1FEAA /* Info.plist */,
 			);
 			path = CodingChallengeUITests;
+			sourceTree = "<group>";
+		};
+		7134D1D826B16EFD00C0A089 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1DA26B16F0B00C0A089 /* Details */,
+				7134D1D926B16F0500C0A089 /* List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		7134D1D926B16F0500C0A089 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				2349FD88261E4F9900A1FEAA /* ShiftsView.swift */,
+				7134D1EB26B177DC00C0A089 /* ShiftsViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7134D1DA26B16F0B00C0A089 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1F326B1EA3500C0A089 /* ShiftDetailsView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7134D1DB26B1703A00C0A089 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7134D1DD26B1705900C0A089 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1DE26B1705900C0A089 /* System.swift */,
+				7134D1DF26B1705900C0A089 /* Feedback.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		7134D1E226B1707F00C0A089 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1E326B1708A00C0A089 /* SwiftUI.View.swift */,
+				7134D1F126B1E34D00C0A089 /* UIKit.UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7134D1E526B170B900C0A089 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1E926B1715600C0A089 /* Agent.swift */,
+				7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7134D1E826B170F900C0A089 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1E526B170B900C0A089 /* API */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7134D1EF26B1DB5B00C0A089 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1F026B1DB6700C0A089 /* Components */,
+				7134D1D826B16EFD00C0A089 /* Screens */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		7134D1F026B1DB6700C0A089 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7134D1ED26B1927500C0A089 /* Spinner.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +273,9 @@
 				2349FD6A261E4F6A00A1FEAA /* PBXTargetDependency */,
 			);
 			name = CodingChallengeTests;
+			packageProductDependencies = (
+				7134D1F626B35FD300C0A089 /* SnapshotTesting */,
+			);
 			productName = CodingChallengeTests;
 			productReference = 2349FD68261E4F6A00A1FEAA /* CodingChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -217,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 2349FD4E261E4F6900A1FEAA;
+			packageReferences = (
+				7134D1F526B35FD300C0A089 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 2349FD58261E4F6900A1FEAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,7 +374,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7134D1EA26B1715600C0A089 /* Agent.swift in Sources */,
+				7134D1F426B1EA3500C0A089 /* ShiftDetailsView.swift in Sources */,
+				7134D1EE26B1927500C0A089 /* Spinner.swift in Sources */,
 				2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */,
+				7134D1F226B1E34D00C0A089 /* UIKit.UIColor.swift in Sources */,
+				7134D1E026B1705900C0A089 /* System.swift in Sources */,
+				7134D1E426B1708A00C0A089 /* SwiftUI.View.swift in Sources */,
+				7134D1E726B170DC00C0A089 /* ShiftsAPI.swift in Sources */,
+				7134D1EC26B177DC00C0A089 /* ShiftsViewModel.swift in Sources */,
+				7134D1E126B1705900C0A089 /* Feedback.swift in Sources */,
 				2349FD5B261E4F6900A1FEAA /* CodingChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +546,7 @@
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CodingChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +568,7 @@
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CodingChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7134D1F526B35FD300C0A089 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7134D1F626B35FD300C0A089 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7134D1F526B35FD300C0A089 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2349FD4F261E4F6900A1FEAA /* Project object */;
 }
