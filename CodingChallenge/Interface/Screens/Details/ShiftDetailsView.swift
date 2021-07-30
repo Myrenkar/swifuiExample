@@ -17,10 +17,8 @@ struct ShiftDetailsView: View {
             Button("Press to dismiss") {
                 presentationMode.wrappedValue.dismiss()
             }
-            .font(.title)
+            .font(.caption)
             .padding()
         }
-
-
     }
 }

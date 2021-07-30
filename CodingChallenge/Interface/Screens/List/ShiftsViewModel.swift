@@ -9,15 +9,18 @@ final class ShiftsViewModel: ObservableObject {
     private var bag = Set<AnyCancellable>()
 
     private let input = PassthroughSubject<Event, Never>()
+    private let api: ShiftsAPIProtocol
 
-    init() {
+    init(api: ShiftsAPIProtocol) {
+        self.api = api
+
         Publishers.system(
             initial: state,
             reduce: reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoadingInitial(page: 0),
-                Self.userInput(input: input.eraseToAnyPublisher())
+                whenLoadingInitial(page: 0),
+                userInput(input: input.eraseToAnyPublisher())
             ]
         )
         .assign(to: \.state, on: self)
@@ -120,10 +123,10 @@ extension ShiftsViewModel {
         }
     }
 
-    static func whenLoadingInitial(page: Int) -> Feedback<State, Event> {
+    func whenLoadingInitial(page: Int) -> Feedback<State, Event> {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
-            return ShiftsAPI.shifts(week: page)
+            return self.api.shifts(week: page)
                 .map { $0.data.map(ListSection.init) }
                 .map(Event.onShiftLoaded)
                 .catch { Just(Event.onFailedToLoadShifts($0)) }
@@ -131,7 +134,7 @@ extension ShiftsViewModel {
         }
     }
 
-    static func userInput(input: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
+    func userInput(input: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
         Feedback { _ in input }
     }
 }

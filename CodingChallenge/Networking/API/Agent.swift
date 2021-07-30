@@ -5,7 +5,7 @@ protocol NetworkRunnerProtocol {
     func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, Error>
 }
 
-struct Agent: NetworkRunnerProtocol {
+final class Agent: NetworkRunnerProtocol {
     func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, Error> {
         let snakeCaseDecode = JSONDecoder()
         snakeCaseDecode.keyDecodingStrategy = .convertFromSnakeCase
@@ -14,11 +14,12 @@ struct Agent: NetworkRunnerProtocol {
         return URLSession.shared
             .dataTaskPublisher(for: request)
             .map { $0.data }
-            .handleEvents(receiveOutput: { print(NSString(data: $0, encoding: String.Encoding.utf8.rawValue) ?? "") })
-            .decode(type: T.self, decoder: snakeCaseDecode)
-            .mapError({ err in
-                return err
+            .handleEvents(receiveOutput: {
+                #if DEBUG
+                print(NSString(data: $0, encoding: String.Encoding.utf8.rawValue) ?? "")
+                #endif
             })
+            .decode(type: T.self, decoder: snakeCaseDecode)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
