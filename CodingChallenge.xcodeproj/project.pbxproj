@@ -13,11 +13,9 @@
 		2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD88261E4F9900A1FEAA /* ShiftsView.swift */; };
 		7134D1E026B1705900C0A089 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1DE26B1705900C0A089 /* System.swift */; };
 		7134D1E126B1705900C0A089 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1DF26B1705900C0A089 /* Feedback.swift */; };
-		7134D1E426B1708A00C0A089 /* SwiftUI.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E326B1708A00C0A089 /* SwiftUI.View.swift */; };
 		7134D1E726B170DC00C0A089 /* ShiftsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */; };
 		7134D1EA26B1715600C0A089 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E926B1715600C0A089 /* Agent.swift */; };
 		7134D1EC26B177DC00C0A089 /* ShiftsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1EB26B177DC00C0A089 /* ShiftsViewModel.swift */; };
-		7134D1EE26B1927500C0A089 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1ED26B1927500C0A089 /* Spinner.swift */; };
 		7134D1F226B1E34D00C0A089 /* UIKit.UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1F126B1E34D00C0A089 /* UIKit.UIColor.swift */; };
 		7134D1F426B1EA3500C0A089 /* ShiftDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1F326B1EA3500C0A089 /* ShiftDetailsView.swift */; };
 		7134D1F726B35FD300C0A089 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7134D1F626B35FD300C0A089 /* SnapshotTesting */; };
@@ -48,11 +46,9 @@
 		2349FD88261E4F9900A1FEAA /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		7134D1DE26B1705900C0A089 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		7134D1DF26B1705900C0A089 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		7134D1E326B1708A00C0A089 /* SwiftUI.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUI.View.swift; sourceTree = "<group>"; };
 		7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsAPI.swift; sourceTree = "<group>"; };
 		7134D1E926B1715600C0A089 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		7134D1EB26B177DC00C0A089 /* ShiftsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsViewModel.swift; sourceTree = "<group>"; };
-		7134D1ED26B1927500C0A089 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		7134D1F126B1E34D00C0A089 /* UIKit.UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.UIColor.swift; sourceTree = "<group>"; };
 		7134D1F326B1EA3500C0A089 /* ShiftDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDetailsView.swift; sourceTree = "<group>"; };
 		7134D1F826B364A100C0A089 /* ShiftDetailsViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDetailsViewSnapshotTest.swift; sourceTree = "<group>"; };
@@ -178,7 +174,6 @@
 		7134D1E226B1707F00C0A089 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7134D1E326B1708A00C0A089 /* SwiftUI.View.swift */,
 				7134D1F126B1E34D00C0A089 /* UIKit.UIColor.swift */,
 			);
 			path = Extensions;
@@ -204,18 +199,9 @@
 		7134D1EF26B1DB5B00C0A089 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				7134D1F026B1DB6700C0A089 /* Components */,
 				7134D1D826B16EFD00C0A089 /* Screens */,
 			);
 			path = Interface;
-			sourceTree = "<group>";
-		};
-		7134D1F026B1DB6700C0A089 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				7134D1ED26B1927500C0A089 /* Spinner.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		7134D1FA26B365FD00C0A089 /* Doubles */ = {
@@ -374,12 +360,10 @@
 			files = (
 				7134D1EA26B1715600C0A089 /* Agent.swift in Sources */,
 				7134D1F426B1EA3500C0A089 /* ShiftDetailsView.swift in Sources */,
-				7134D1EE26B1927500C0A089 /* Spinner.swift in Sources */,
 				2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */,
 				7134D20526B3E99800C0A089 /* Shifts.swift in Sources */,
 				7134D1F226B1E34D00C0A089 /* UIKit.UIColor.swift in Sources */,
 				7134D1E026B1705900C0A089 /* System.swift in Sources */,
-				7134D1E426B1708A00C0A089 /* SwiftUI.View.swift in Sources */,
 				7134D1E726B170DC00C0A089 /* ShiftsAPI.swift in Sources */,
 				7134D1EC26B177DC00C0A089 /* ShiftsViewModel.swift in Sources */,
 				7134D1E126B1705900C0A089 /* Feedback.swift in Sources */,

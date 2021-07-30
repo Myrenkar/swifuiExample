@@ -11,17 +11,16 @@ struct ShiftsView: View {
         .onAppear { self.viewModel.send(event: .onAppear) }
     }
 
-
-    private var content: some View {
+    @ViewBuilder private var content: some View {
         switch viewModel.state {
             case .idle:
-                return Color.clear.eraseToAnyView()
+                Color.clear
             case .loading:
-                return Spinner(isAnimating: true, style: .large).eraseToAnyView()
+                ProgressView().progressViewStyle(CircularProgressViewStyle())
             case .error(let error):
-                return Text(error.localizedDescription).eraseToAnyView()
+                Text(error.localizedDescription)
             case .loaded(let shifts):
-                return list(of: shifts).eraseToAnyView()
+                list(of: shifts)
         }
     }
 
@@ -90,9 +89,5 @@ struct ShiftsItemView: View {
             .background(Color(UIColor(hex: type.color) ?? .black))
             .clipShape(Circle())
             .foregroundColor(.white)
-    }
-
-    private var spinner: some View {
-        Spinner(isAnimating: true, style: .medium)
     }
 }

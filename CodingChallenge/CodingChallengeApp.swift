@@ -5,7 +5,7 @@ struct CodingChallengeApp: App {
     let api = ShiftsAPI(agent: Agent())
     var body: some Scene {
         WindowGroup {
-            ShiftsView(viewModel: ShiftsViewModel(api: api))
+            ShiftsView(viewModel: ShiftsViewModel(api: api) )
         }
     }
 }
