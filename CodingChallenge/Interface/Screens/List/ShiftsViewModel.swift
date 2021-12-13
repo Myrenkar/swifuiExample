@@ -2,8 +2,8 @@ import Foundation
 import Combine
 
 final class ShiftsViewModel: ObservableObject {
-    @Published private(set) var state = State.idle
-    @Published private(set) var currentPage = 0
+    @Published var state = State.idle
+    @Published var currentPage = 0
 
     private(set) var items: [ListSection] = []
     private var bag = Set<AnyCancellable>()
@@ -20,6 +20,7 @@ final class ShiftsViewModel: ObservableObject {
             scheduler: RunLoop.main,
             feedbacks: [
                 whenLoadingInitial(page: 0),
+                whenLoadingAdditional(page: 0),
                 userInput(input: input.eraseToAnyPublisher())
             ]
         )
@@ -41,7 +42,8 @@ final class ShiftsViewModel: ObservableObject {
 extension ShiftsViewModel {
     enum State {
         case idle
-        case loading(Int)
+        case loading
+        case lazyLoading(Int, [ListSection])
         case loaded([ListSection])
         case error(Error)
     }
@@ -51,7 +53,7 @@ extension ShiftsViewModel {
         case onSelectShift(ListItem)
         case onShiftLoaded([ListSection])
         case onFailedToLoadShifts(Error)
-        case scrolledToLast
+        case scrolledToLast([ListSection])
     }
 
     struct ListSection: Identifiable, Equatable {
@@ -97,7 +99,7 @@ extension ShiftsViewModel {
             case .idle:
                 switch event {
                     case .onAppear:
-                        return .loading(0)
+                        return .loading
                     default:
                         return state
                 }
@@ -113,11 +115,20 @@ extension ShiftsViewModel {
                 }
             case .loaded:
                 switch event {
-                    case .scrolledToLast:
-                        return .loading(currentPage + 1)
+                    case .scrolledToLast(let items):
+                        return .lazyLoading(currentPage + 1, items)
                     default:
                         return state
                 }
+
+            case .lazyLoading(_, let oldItems):
+                switch event {
+                    case .onShiftLoaded(let sections):
+                        items = oldItems + sections
+                        return .loaded(items)
+                    default: return state
+                }
+
             case .error:
                 return state
         }
@@ -126,6 +137,17 @@ extension ShiftsViewModel {
     func whenLoadingInitial(page: Int) -> Feedback<State, Event> {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
+            return self.api.shifts(week: page)
+                .map { $0.data.map(ListSection.init) }
+                .map(Event.onShiftLoaded)
+                .catch { Just(Event.onFailedToLoadShifts($0)) }
+                .eraseToAnyPublisher()
+        }
+    }
+
+    func whenLoadingAdditional(page: Int) -> Feedback<State, Event> {
+        Feedback { (state: State) -> AnyPublisher<Event, Never> in
+            guard case .lazyLoading(let page, _) = state else { return Empty().eraseToAnyPublisher() }
             return self.api.shifts(week: page)
                 .map { $0.data.map(ListSection.init) }
                 .map(Event.onShiftLoaded)

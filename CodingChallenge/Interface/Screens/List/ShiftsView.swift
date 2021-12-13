@@ -19,7 +19,7 @@ struct ShiftsView: View {
                 ProgressView().progressViewStyle(CircularProgressViewStyle())
             case .error(let error):
                 Text(error.localizedDescription)
-            case .loaded(let shifts):
+            case .loaded(let shifts), .lazyLoading(_, let shifts):
                 list(of: shifts)
         }
     }
@@ -31,12 +31,13 @@ struct ShiftsView: View {
                     ForEach(section.items, id: \.id) { item in
                         ShiftsItemView(shift: item).onAppear {
                             if shifts.last == section, shifts.last?.items.last == item  {
-                                viewModel.send(event: .scrolledToLast)
+                                viewModel.send(event: .scrolledToLast(shifts))
                             }
                         }
                     }
                 }
             }
+            ProgressView().progressViewStyle(CircularProgressViewStyle())
         }.listStyle(GroupedListStyle())
     }
 }

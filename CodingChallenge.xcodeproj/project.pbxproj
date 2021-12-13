@@ -11,6 +11,8 @@
 		2349FD5F261E4F6A00A1FEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2349FD5E261E4F6A00A1FEAA /* Assets.xcassets */; };
 		2349FD62261E4F6A00A1FEAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2349FD61261E4F6A00A1FEAA /* Preview Assets.xcassets */; };
 		2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD88261E4F9900A1FEAA /* ShiftsView.swift */; };
+		710E5F3A26C2C67C00674F63 /* ShiftsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E5F3926C2C67C00674F63 /* ShiftsViewModelTests.swift */; };
+		710E5F3D26C2C6F600674F63 /* ShiftsAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E5F3C26C2C6F600674F63 /* ShiftsAPIMock.swift */; };
 		7134D1E026B1705900C0A089 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1DE26B1705900C0A089 /* System.swift */; };
 		7134D1E126B1705900C0A089 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1DF26B1705900C0A089 /* Feedback.swift */; };
 		7134D1E726B170DC00C0A089 /* ShiftsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */; };
@@ -44,6 +46,8 @@
 		2349FD68261E4F6A00A1FEAA /* CodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2349FD6E261E4F6A00A1FEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2349FD88261E4F9900A1FEAA /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
+		710E5F3926C2C67C00674F63 /* ShiftsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsViewModelTests.swift; sourceTree = "<group>"; };
+		710E5F3C26C2C6F600674F63 /* ShiftsAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsAPIMock.swift; sourceTree = "<group>"; };
 		7134D1DE26B1705900C0A089 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		7134D1DF26B1705900C0A089 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		7134D1E626B170DC00C0A089 /* ShiftsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsAPI.swift; sourceTree = "<group>"; };
@@ -121,11 +125,28 @@
 		2349FD6B261E4F6A00A1FEAA /* CodingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				710E5F3826C2C66100674F63 /* Unit Tests */,
 				7134D20026B3E71600C0A089 /* SnapshotTests */,
 				7134D1FA26B365FD00C0A089 /* Doubles */,
 				2349FD6E261E4F6A00A1FEAA /* Info.plist */,
 			);
 			path = CodingChallengeTests;
+			sourceTree = "<group>";
+		};
+		710E5F3826C2C66100674F63 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				710E5F3926C2C67C00674F63 /* ShiftsViewModelTests.swift */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		710E5F3B26C2C6E900674F63 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				710E5F3C26C2C6F600674F63 /* ShiftsAPIMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		7134D1D826B16EFD00C0A089 /* Screens */ = {
@@ -207,6 +228,7 @@
 		7134D1FA26B365FD00C0A089 /* Doubles */ = {
 			isa = PBXGroup;
 			children = (
+				710E5F3B26C2C6E900674F63 /* Mocks */,
 				7134D1FB26B3660900C0A089 /* Fixtures */,
 			);
 			path = Doubles;
@@ -375,7 +397,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710E5F3D26C2C6F600674F63 /* ShiftsAPIMock.swift in Sources */,
 				7134D1FD26B3661B00C0A089 /* ShiftDTO+fixture.swift in Sources */,
+				710E5F3A26C2C67C00674F63 /* ShiftsViewModelTests.swift in Sources */,
 				7134D1F926B364A100C0A089 /* ShiftDetailsViewSnapshotTest.swift in Sources */,
 				7134D1FF26B3E58800C0A089 /* ListItem+Fixture.swift in Sources */,
 			);
